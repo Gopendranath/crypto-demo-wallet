@@ -1,4 +1,28 @@
-export const wallets = [
+export type AssetType = {
+  symbol: string;
+  balance: number;
+};
+
+
+export type AccountType = {
+  id: number;
+  name: string;
+  pubAddress: string;
+  privAddress: string;
+  createdDate: Date;
+  assets: AssetType[];
+};
+
+
+export type WalletType = {
+  id: number;
+  name: string;
+  phrase: string[];
+  createdDate: Date;
+  accounts: AccountType[];
+};
+
+export const wallets: WalletType[] = [
   {
     id: 0,
     name: "Wallet 1",
@@ -26,6 +50,126 @@ export const wallets = [
   {
     id: 1,
     name: "Wallet 2",
+    phrase: [],
+    createdDate: new Date(),
+    accounts: [
+      {
+        id: 0,
+        name: "Account 1",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+      {
+        id: 1,
+        name: "Account 2",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Wallet 3",
+    phrase: [],
+    createdDate: new Date(),
+    accounts: [
+      {
+        id: 0,
+        name: "Account 1",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+      {
+        id: 1,
+        name: "Account 2",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Wallet 4",
+    phrase: [],
+    createdDate: new Date(),
+    accounts: [
+      {
+        id: 0,
+        name: "Account 1",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+      {
+        id: 1,
+        name: "Account 2",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Wallet 5",
+    phrase: [],
+    createdDate: new Date(),
+    accounts: [
+      {
+        id: 0,
+        name: "Account 1",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+      {
+        id: 1,
+        name: "Account 2",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "Wallet 6",
+    phrase: [],
+    createdDate: new Date(),
+    accounts: [
+      {
+        id: 0,
+        name: "Account 1",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+      {
+        id: 1,
+        name: "Account 2",
+        pubAddress: "",
+        privAddress: "",
+        createdDate: new Date(),
+        assets: [{ symbol: "ETH", balance: 0 }],
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Wallet 7",
     phrase: [],
     createdDate: new Date(),
     accounts: [
@@ -82,4 +226,11 @@ const catchData = async () => {
   return data;
 };
 
-export const coinTypes = catchData();
+export type CoinType = {
+    coin_type: number;
+    hex: string;
+    symbol: string;
+    name: string;
+};
+
+export const coinTypes: CoinType[] = await catchData();
