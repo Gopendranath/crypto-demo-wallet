@@ -14,12 +14,12 @@ const WalletCard = ({ wallet, className, onClick }: WalletCardProps) => {
       onClick={onClick}
       className={cn(
         // base look
-        "relative cursor-pointer overflow-hidden rounded-[var(--radius-base)] border-2 border-[var(--color-border)]",
-        "bg-[var(--color-secondary-background)] text-[var(--color-foreground)] transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]",
+        "relative cursor-pointer overflow-hidden rounded-base border-2 border-(--color-border)",
+        "bg-(--color-secondary-background) text-(--color-foreground) transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]",
         // default neubrutalist shadow
         "shadow-[var(--spacing-boxShadowX)_var(--spacing-boxShadowY)_0_0_var(--color-border)]",
-        // hover → pop down & remove shadow
-        "hover:translate-x-[var(--spacing-boxShadowX)] hover:translate-y-[var(--spacing-boxShadowY)] hover:shadow-none",
+        // hover → pop down
+        "hover:translate-x-(--spacing-boxShadowX) hover:translate-y-(--spacing-boxShadowY) hover:shadow-none",
         // active → press a bit deeper
         "active:translate-x-[calc(var(--spacing-boxShadowX)*1.5)] active:translate-y-[calc(var(--spacing-boxShadowY)*1.5)] active:shadow-none",
         className
@@ -29,13 +29,13 @@ const WalletCard = ({ wallet, className, onClick }: WalletCardProps) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             {/* Icon */}
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--color-border)] bg-[var(--color-main)] text-[var(--color-main-foreground)] shadow-[2px_2px_0_0_var(--color-border)] transition-transform duration-200 group-hover:scale-95">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-(--color-border) bg-(--color-main) text-(--color-main-foreground) shadow-[2px_2px_0_0_var(--color-border)] transition-transform duration-200 group-hover:scale-95">
               <Wallet className="h-6 w-6" />
             </div>
 
             {/* Wallet Info */}
             <div>
-              <h3 className="text-lg font-[var(--font-weight-heading)]">
+              <h3 className="text-lg font-(--font-weight-heading)">
                 {wallet.name}
               </h3>
               <p className="text-sm text-[color-mix(in_oklab,var(--color-foreground)_70%,transparent)]">
