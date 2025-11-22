@@ -21,7 +21,7 @@ const CoinCard = ({coin}: {coin: CoinType}) => {
             </span>
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 {coin.symbol ? (
-                    <span className="px-2 py-[2px] bg-main text-main-foreground rounded">
+                    <span className="px-2 py-0.5 bg-main text-main-foreground rounded">
                         {coin.symbol}
                     </span>
                 ) : (

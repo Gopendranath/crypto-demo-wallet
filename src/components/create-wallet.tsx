@@ -12,14 +12,16 @@ import {
 } from "./ui/alert-dialog";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { wallets } from "../lib/wallet-data";
 import WalletCard from "./wallet-card";
 import type { WalletType } from "../lib/wallet-data";
 import { useNavigate } from "react-router-dom";
+import { useWalletStore } from "../store/handleWallet"
 
 const CreateWallet = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const wallets = useWalletStore(state => state.walletData);
+  const createWallet = useWalletStore(state => state.createWallet);
 
   const onOpenChange = (open: boolean) => {
     setOpen(open);
@@ -29,6 +31,10 @@ const CreateWallet = () => {
     // console.log(wallet.name);
     navigate(`/${wallet.name}`, { state: { wallet } });
   };
+
+  const handleCreateWallet = (num : number, name : string) => {
+    createWallet(num, name)
+  }
 
   useEffect(() => {
     // console.log(wallets);
@@ -69,7 +75,7 @@ const CreateWallet = () => {
             </AlertDialogHeader>
             <AlertDialogFooter className="mt-4 flex justify-end gap-3">
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction>Continue</AlertDialogAction>
+              <AlertDialogAction onClick={() => handleCreateWallet(256, "Wallet 1")}>Continue</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>

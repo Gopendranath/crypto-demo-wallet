@@ -1,3 +1,4 @@
+//wallet-data.ts
 export type AssetType = {
   symbol: string;
   balance: number;
@@ -245,22 +246,6 @@ export const wallets: WalletType[] = [
     phrase: [],
     createdDate: new Date(),
     accounts: [
-      {
-        id: 0,
-        name: "Account 1",
-        pubAddress: "",
-        privAddress: "",
-        createdDate: new Date(),
-        assets: [{ symbol: "ETH", balance: 0 }],
-      },
-      {
-        id: 1,
-        name: "Account 2",
-        pubAddress: "",
-        privAddress: "",
-        createdDate: new Date(),
-        assets: [{ symbol: "ETH", balance: 0 }],
-      },
     ],
   },
 ];

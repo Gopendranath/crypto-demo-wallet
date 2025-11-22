@@ -24,7 +24,7 @@ const AccountCard = ({ account }: { account: AccountType }) => {
         </span>
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           {account.assets?.[0]?.symbol ? (
-            <span className="px-2 py-[2px] bg-main text-main-foreground rounded">
+            <span className="px-2 py-0.5 bg-main text-main-foreground rounded">
               {account.assets?.[0]?.symbol}
             </span>
           ) : (
